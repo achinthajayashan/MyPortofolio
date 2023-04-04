@@ -1,0 +1,44 @@
+h2{
+    text-shadow: red;
+    display: inline;
+    alignment: left;
+    padding-bottom: 20px;
+
+}
+
+h3{
+    color: red;
+}
+
+header{
+    
+}
+
+menu{
+    alignment: right;
+    list-style: none;
+    display: inline;
+    /*padding: 600px;*/
+
+
+}
+
+nav{
+    alignment: right;
+    
+    display: inline;
+    padding-left: 1000px;
+    padding-bottom: 20px;
+
+}
+
+li{
+    display: inline;
+    padding: 5px;
+    alignment: right;
+}
+
+section{
+    background-image: url(/assets/img/emma-darvick-doodads-abstract-gif-on-gifer-by-ygglanim.gif);
+}
+
