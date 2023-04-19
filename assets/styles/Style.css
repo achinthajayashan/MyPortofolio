@@ -58,7 +58,7 @@ section{
     top: 0;
     display: inline;
     padding-right: 5%;
-    font-family: ".AppleSystemUIFont";
+    font-family: "Inter";
     text-decoration: none;
     list-style-type: none;
     font-size: 20px;
@@ -68,7 +68,7 @@ section{
     position: relative;
     padding-left: 800px;
     padding-top: 100px;
-    font-family: ".AppleSystemUIFont";
+    font-family: "Inter";
 }
 
 .hello{
@@ -86,7 +86,39 @@ section{
 .mySubTitle{
     font-size: 40px;
     margin-top: 20px;
-    font-family: ".AppleSystemUIFont";
+    font-family: "Inter";
+}
+
+.graySection{
+    position: relative;
+    background-color: #F0F0F0;
+    font-family: "Inter";
+}
+
+.titles{
+    color: red;
+    padding-top: 60px;
+    font-size: 35px;
+    padding-left: 40px;
+    font-family: "Inter";
+    text-decoration: none;
+}
+
+.description{
+    position: relative;
+    color: dimgrey;
+    font-size: 30px;
+    padding-left: 150px;
+    padding-top: 60px;
+    padding-bottom: 300px;
+    text-align: justify-all;
+}
+
+.mySecondPic{
+    padding-left: 40vw;
+    position: absolute;
+    left: 10%;
+    top: 0;
 }
 
 
