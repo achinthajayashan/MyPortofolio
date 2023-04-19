@@ -14,31 +14,80 @@ header{
     
 }
 
-menu{
-    alignment: right;
-    list-style: none;
-    display: inline;
-    /*padding: 600px;*/
+/*menu{*/
+/*    alignment: right;*/
+/*    list-style: none;*/
+/*    display: inline;*/
+/*    !*padding: 600px;*!*/
 
 
-}
 
-nav{
-    alignment: right;
-    
-    display: inline;
-    padding-left: 1000px;
-    padding-bottom: 20px;
 
-}
+/*nav{*/
+/*    alignment: right;*/
+/*    */
+/*    display: inline;*/
+/*    padding-left: 1000px;*/
+/*    padding-bottom: 20px;*/
+
+/*}*/
 
 li{
     display: inline;
-    padding: 5px;
+    padding: 10px;
     alignment: right;
+    text-decoration: none;
+    text-underline: none;
+    list-style-type: none;
+
 }
 
 section{
-    background-image: url(/assets/img/emma-darvick-doodads-abstract-gif-on-gifer-by-ygglanim.gif);
+    /*background-image: url(/assets/img/emma-darvick-doodads-abstract-gif-on-gifer-by-ygglanim.gif);*/
 }
+
+.myBlackPic{
+    position: absolute;
+    left: 5%;
+    padding: 5%;
+}
+
+.mainMenu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline;
+    padding-right: 5%;
+    font-family: ".AppleSystemUIFont";
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 20px;
+}
+
+.nameDetails{
+    position: relative;
+    padding-left: 800px;
+    padding-top: 100px;
+    font-family: ".AppleSystemUIFont";
+}
+
+.hello{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.myName{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 70px;
+    color: red;
+}
+
+.mySubTitle{
+    font-size: 40px;
+    margin-top: 20px;
+    font-family: ".AppleSystemUIFont";
+}
+
+
 
