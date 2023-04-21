@@ -17,6 +17,7 @@ header{
     top: 0;
     z-index: 3;
     background-color: white;
+    font-family: "Rubik Iso";
 
 }
 
@@ -78,7 +79,11 @@ header li{
     list-style-type: none;
 
 }
+main{
+    font-family: "Rubik Iso";
+}
 main>section{
+
     position: relative;
 }
 
