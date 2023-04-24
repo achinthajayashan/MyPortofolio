@@ -1,4 +1,7 @@
-
+body{
+    margin-top: 0;
+    font-family: "Inter";
+}
 
 h2{
     text-shadow: red;
@@ -17,7 +20,7 @@ header{
     top: 0;
     z-index: 3;
     background-color: white;
-    font-family: "Rubik Iso";
+    font-family: "Inter";
 
 }
 
@@ -79,9 +82,7 @@ header li{
     list-style-type: none;
 
 }
-main{
-    font-family: "Rubik Iso";
-}
+
 main>section{
 
     position: relative;
@@ -245,13 +246,7 @@ main>section:nth-child(2){
     right: 1%;
 }
 
-main{
-    font-family: Inter;
-}
 
-header{
-    font-family: Inter;
-}
 
 
 
