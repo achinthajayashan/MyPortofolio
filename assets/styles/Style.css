@@ -229,6 +229,116 @@ main>section:nth-child(3)>aside{
     margin-bottom: 10%;
 }
 
+main>section:nth-child(4){
+    background-color: #F0F0F0;
+    height: 150vh
+}
+
+main>section:nth-child(4)>h1{
+    font-size: 100px;
+    color: white;
+    position: absolute;
+    top: -1%;
+    right: 0;
+    margin-top: 0;
+}
+
+main>section:nth-child(4)>h3 i{
+    color: #ff253a;
+    margin-right: 20px;
+    font-size: 20px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+main>section:nth-child(4)>h3{
+    font-size: 40px ;
+    /*margin-left: 80px;*/
+    /*margin-top: 80px;*/
+
+}
+
+/*main>section:nth-child(4)>article div figure img{*/
+/*    display: inline;*/
+/*}*/
+
+/*main>section:nth-child(4)>article{*/
+/*    display: inline;*/
+/*}*/
+
+main>section:nth-child(4)>article div{
+    display: inline;
+}
+
+main>section:nth-child(4)>article div figure{
+    display: inline;
+}
+
+main>section:nth-child(4)>article{
+    margin-left: 200px;
+    margin-top: 130px;
+}
+
+main>section:nth-child(4)>article>h4{
+    margin-top: 30px;
+    font-size: 20px;
+    /*margin-left: 580px;*/
+}
+
+main>section:nth-child(4)>article:nth-last-child(1){
+    margin-left: 350px;
+    margin-top: 130px;
+}
+
+main>section:nth-child(4)>aside{
+    display: inline;
+}
+
+main>section:nth-child(4)>aside figure{
+    display: inline;
+    width: 30%;
+    margin-left: 40px;
+    margin-right: 0;
+}
+
+main>section:nth-child(4)>aside figure img{
+    display: inline;
+    width: 30%;
+    margin: auto;
+}
+
+main>section:nth-child(4)>aside>h3{
+    color: black;
+    font-size: 35px;
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-bottom: 100px;
+}
+
+main>section:nth-child(5)>h1{
+    font-size: 100px;
+    color: #F0F0F0;
+    position: absolute;
+    top: -1.5%;
+    right: 0;
+    margin-top: 0;
+}
+
+main>section:nth-child(5)>h3 i{
+    color: #ff253a;
+    margin-right: 20px;
+    font-size: 20px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+main>section:nth-child(5)>h3{
+    font-size: 40px ;
+    /*margin-left: 80px;*/
+    /*margin-top: 80px;*/
+
+}
+
 
 /*.myBlackPic{*/
 /*    position: absolute;*/
