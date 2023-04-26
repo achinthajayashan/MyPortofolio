@@ -399,6 +399,72 @@ main>section:nth-child(5)>section div figure img{
     margin-top: 100px;
 }
 
+footer{
+    background-color: #F0F0F0;
+    position: relative;
+    height: 50vh;
+}
+
+footer>aside{
+    width: 300px;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+}
+
+footer>address>ul{
+    font-size: 70px;
+    display: inline;
+
+}
+
+footer>address>ul li{
+    display: inline;
+    margin-left: 100px;
+
+}
+
+footer>address>ul li a{
+    text-decoration-line: none;
+    color: #ff253a;
+}
+
+footer>address>ul li>a:hover{
+    background-color: white;
+    border-radius: 10%;
+}
+
+footer>aside>form{
+    border-radius: 10%;
+    background-color: white;
+    height: 40vh;
+}
+
+footer>aside>form>fieldset>legend{
+    border: none;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+footer>aside>form>fieldset{
+    border: none;
+}
+
+footer>aside>form>fieldset input{
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+footer>aside>form>fieldset textarea{
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+footer>aside>form>fieldset label{
+    line-height: 2;
+}
+
 
 /*main>section:nth-child(5)>section div figure img{*/
 /*    display: inline;*/
@@ -493,6 +559,7 @@ main>section:nth-child(5)>section div figure img{
     position: fixed;
     bottom: 1%;
     right: 1%;
+    z-index: 5;
 }
 
 
