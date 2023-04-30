@@ -305,6 +305,7 @@ main>section:nth-child(4)>aside figure img{
     display: inline;
     width: 30%;
     margin: auto;
+    box-shadow: 5px 5px 5px 3px grey;
 }
 
 main>section:nth-child(4)>aside>h3{
@@ -388,6 +389,7 @@ main>section:nth-child(5)>section div {
 main>section:nth-child(5)>section div figure{
     display: inline;
 
+
 }
 
 main>section:nth-child(5)>section:nth-last-child(1){
@@ -402,49 +404,82 @@ main>section:nth-child(5)>section div figure img{
 footer{
     background-color: #F0F0F0;
     position: relative;
-    height: 50vh;
+    /*height: 50vh;*/
 }
+footer>h1{
+    font-size: 100px;
+    color: white;
+    position: absolute;
+    top: -2.5%;
+    right: 0;
+    margin-top: 0;
+}
+
+footer>address>h3 i{
+    color: #ff253a;
+    margin-right: 5px;
+    font-size: 20px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+footer>address>h3{
+    font-size: 40px ;
+    /*margin-left: 80px;*/
+    /*margin-top: 80px;*/
+
+}
+
+
 
 footer>aside{
     width: 300px;
     position: absolute;
-    right: 5%;
-    top: 10%;
+    right: 20%;
+    top: 25%;
 }
 
 footer>address>ul{
-    font-size: 70px;
-    display: inline;
+    margin-top: 10%;
+    font-size: 30px;
+    list-style: none;
 
 }
 
 footer>address>ul li{
-    display: inline;
     margin-left: 100px;
+    /*display: inline;*/
 
+}
+
+footer>address ul li a p i{
+    margin-right: 20px;
 }
 
 footer>address>ul li a{
     text-decoration-line: none;
-    color: #ff253a;
+    color: black;
 }
 
 footer>address>ul li>a:hover{
-    background-color: white;
+    color: red;
     border-radius: 10%;
 }
 
 footer>aside>form{
     border-radius: 10%;
     background-color: white;
-    height: 40vh;
+    height: 60vh;
+    width: 30vw;
+    box-shadow: 5px 5px 5px grey ;
 }
 
 footer>aside>form>fieldset>legend{
     border: none;
-    font-size: 20px;
-    margin-left: 50px;
-    margin-top: 30px;
+    position: relative;
+    top: 30px;
+    left: 140px;
+    font-size: 25px;
 }
 
 footer>aside>form>fieldset{
@@ -454,15 +489,42 @@ footer>aside>form>fieldset{
 footer>aside>form>fieldset input{
     margin-top: 5px;
     font-size: 20px;
+    position: relative;
+    top: 55px;
+    left: 30px;
+    width: 400px;
+    line-height: 30px;
+}
+
+footer>aside>form>fieldset input:nth-last-child(1){
+    margin-top: 50px;
+    font-size: 20px;
+    position: relative;
+    top: 55px;
+    left: 30px;
+    width: 100px;
 }
 
 footer>aside>form>fieldset textarea{
     margin-top: 5px;
     font-size: 20px;
+    width: 400px;
+    position: relative;
+    top: 55px;
+    left: 30px;
+    line-height: 50px;
 }
 
 footer>aside>form>fieldset label{
     line-height: 2;
+    position: relative;
+    top: 60px;
+    left: 30px;
+}
+footer>h4{
+    color: grey;
+    margin-top: 320px;
+    margin-left: 40%;
 }
 
 
