@@ -1615,16 +1615,14 @@ footer{
         height: 70px;
         background-size: 70px;
     }
-    section:nth-child(7){
-        height: 50vh;
-    }
+
     section:nth-child(7)>p{
         padding-top: 10%;
         font-size: 12px;
     }
 
     section:nth-child(7)>a>div{
-        width: 200px;
+        width: 120px;
     }
 
     section:nth-child(8)>h1:nth-child(1){
@@ -1632,7 +1630,7 @@ footer{
         top: 1%;
     }
     section:nth-child(8){
-        height: 150vh;
+        height: 100vh;
     }
     section:nth-child(8)>h1:nth-child(2){
         font-size: 16px;
@@ -1657,9 +1655,7 @@ footer{
     section:nth-child(8)>section>a>div>h6{
         font-size: 13px;!important;
     }
-    section:nth-child(9){
-        height: 50vh;
-    }
+
     section:nth-child(9)>section>div{
         width: 70px;
         height: 70px;
@@ -1672,7 +1668,7 @@ footer{
     }
 
     section:nth-child(9)>a>div{
-        width: 200px;
+        width: 170px;
     }
 
     section:nth-child(10)>h1:nth-child(1){
@@ -1680,14 +1676,12 @@ footer{
         top: 1%;
     }
     section:nth-child(10){
-        height: 150vh;
+        height: 100vh;
     }
     section:nth-child(10)>h1:nth-child(2){
         font-size: 16px;
     }
-    section:nth-child(10){
-        height: 50vh;
-    }
+
     section:nth-child(10)>section{
         flex-direction: column;
     }
@@ -1753,6 +1747,59 @@ footer{
     }
 }
 
+
+/*@media all and (max-width:1024px) and (min-width: 768px){*/
+/*    h6{*/
+/*        font-size: 13px;*/
+/*    }*/
+/*    header>h2{*/
+/*        margin-left: 5%;*/
+/*    }*/
+/*    header>nav{*/
+/*        margin-right: 5%;*/
+/*    }*/
+/*    header>nav>ul>li{*/
+/*    margin-left:10px ;*/
+/*    }*/
+/*    section:nth-child(1){*/
+/*        margin-top: 7%;*/
+/*    }*/
+/*    section:nth-child(2){*/
+/*        height: 70vh;*/
+/*    }*/
+/*    section:nth-child(2)>article{*/
+/*        scale: 0.8;*/
+/*    }*/
+/*    section:nth-child(3)>section>div{*/
+/*        scale: 0.8;*/
+/*    }*/
+/*    section:nth-child(4)>section{*/
+/*        scale: 0.8;*/
+/*        margin-top: 0;*/
+/*        margin-bottom: 0;*/
+/*    }*/
+
+/*    section:nth-child(4)>section>div:nth-child(2){*/
+/*        scale: 0.8;*/
+/*        background-size: 100px;*/
+/*        width: 280px;*/
+/*    }*/
+/*    !*section:nth-child(4)>section>div{*!*/
+/*    !*    scale: 0.8;*!*/
+/*    !*}*!*/
+
+/*    section:nth-child(5)>section>div{*/
+/*        scale: 0.8;*/
+/*    }*/
+
+/*    section:nth-child(6)>section>div{*/
+/*        scale: 0.8;*/
+/*    }*/
+
+/*    section:nth-child(7)>a>div{*/
+/*        width: 200px;*/
+/*    }*/
+/*}*/
 
 
 
