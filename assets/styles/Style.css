@@ -1754,58 +1754,5 @@ footer{
 }
 
 
-/*@media all and (max-width:1024px) and (min-width: 768px){*/
-/*    h6{*/
-/*        font-size: 13px;*/
-/*    }*/
-/*    header>h2{*/
-/*        margin-left: 5%;*/
-/*    }*/
-/*    header>nav{*/
-/*        margin-right: 5%;*/
-/*    }*/
-/*    header>nav>ul>li{*/
-/*    margin-left:10px ;*/
-/*    }*/
-/*    section:nth-child(1){*/
-/*        margin-top: 7%;*/
-/*    }*/
-/*    section:nth-child(2){*/
-/*        height: 70vh;*/
-/*    }*/
-/*    section:nth-child(2)>article{*/
-/*        scale: 0.8;*/
-/*    }*/
-/*    section:nth-child(3)>section>div{*/
-/*        scale: 0.8;*/
-/*    }*/
-/*    section:nth-child(4)>section{*/
-/*        scale: 0.8;*/
-/*        margin-top: 0;*/
-/*        margin-bottom: 0;*/
-/*    }*/
-
-/*    section:nth-child(4)>section>div:nth-child(2){*/
-/*        scale: 0.8;*/
-/*        background-size: 100px;*/
-/*        width: 280px;*/
-/*    }*/
-/*    !*section:nth-child(4)>section>div{*!*/
-/*    !*    scale: 0.8;*!*/
-/*    !*}*!*/
-
-/*    section:nth-child(5)>section>div{*/
-/*        scale: 0.8;*/
-/*    }*/
-
-/*    section:nth-child(6)>section>div{*/
-/*        scale: 0.8;*/
-/*    }*/
-
-/*    section:nth-child(7)>a>div{*/
-/*        width: 200px;*/
-/*    }*/
-/*}*/
-
 
 
