@@ -1556,7 +1556,7 @@ footer{
         margin-left: 25%;
     }
     section:nth-child(5){
-        height: 140vh;
+        height: 170vh;
     }
     section:nth-child(5)>h1:nth-child(1){
         font-size: 35px;
@@ -1615,14 +1615,16 @@ footer{
         height: 70px;
         background-size: 70px;
     }
-
+    section:nth-child(7){
+        height: 50vh;
+    }
     section:nth-child(7)>p{
         padding-top: 10%;
         font-size: 12px;
     }
 
     section:nth-child(7)>a>div{
-        width: 120px;
+        width: 200px;
     }
 
     section:nth-child(8)>h1:nth-child(1){
@@ -1630,7 +1632,7 @@ footer{
         top: 1%;
     }
     section:nth-child(8){
-        height: 100vh;
+        height: 150vh;
     }
     section:nth-child(8)>h1:nth-child(2){
         font-size: 16px;
@@ -1655,7 +1657,9 @@ footer{
     section:nth-child(8)>section>a>div>h6{
         font-size: 13px;!important;
     }
-
+    section:nth-child(9){
+        height: 50vh;
+    }
     section:nth-child(9)>section>div{
         width: 70px;
         height: 70px;
@@ -1668,7 +1672,7 @@ footer{
     }
 
     section:nth-child(9)>a>div{
-        width: 170px;
+        width: 200px;
     }
 
     section:nth-child(10)>h1:nth-child(1){
@@ -1676,12 +1680,14 @@ footer{
         top: 1%;
     }
     section:nth-child(10){
-        height: 100vh;
+        height: 150vh;
     }
     section:nth-child(10)>h1:nth-child(2){
         font-size: 16px;
     }
-
+    section:nth-child(10){
+        height: 50vh;
+    }
     section:nth-child(10)>section{
         flex-direction: column;
     }
