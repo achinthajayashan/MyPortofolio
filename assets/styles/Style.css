@@ -1420,6 +1420,326 @@ footer{
         }
     }
 
+@media all and (min-width: 425px) and (max-width: 768px){
+
+    h4{
+        font-size: 18px;
+    }
+    h5{
+        font-size: 12px;
+    }
+    h6{
+        font-size: 10px;
+        /*margin-top: 2px;*/
+        /*margin-bottom: 2px;*/
+    }
+
+    header{
+        display: block;
+        text-align: center;
+    }
+
+    header>h2{
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    header>nav{
+        text-align: center;
+        font-size: 15px;
+    }
+
+    header>nav>ul{
+        margin-left: 10%;
+        text-align: center;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 1%;
+    }
+    header>nav>ul>li{
+        text-align: center;
+        margin-left: 10px;
+    }
+
+    section:nth-child(2){
+        /*scale: 0.7;*/
+        height: 80vh;
+    }
+
+    section:nth-child(2)>article>h1{
+        font-size: 25px;
+    }
+
+    section:nth-child(2)>article>h1>b{
+        font-size: 32px;
+    }
+    section:nth-child(1)>figure>img{
+        height: 650px;
+    }
+
+    section:nth-child(3)>h1:nth-child(1){
+        font-size: 35px;
+        top: 1%;
+    }
+
+    section:nth-child(3)>h1:nth-child(2){
+        font-size: 16px;
+    }
+
+    section:nth-child(3)>section{
+        flex-direction: row;
+    }
+
+    section:nth-child(3)>section>div:nth-child(2){
+        /*display: none;*/
+    }
+
+    section:nth-child(3)>section>div:nth-child(3){
+        /*display: none;*/
+    }
+
+    section:nth-child(3)>section>div{
+        width: 200px;
+        height: 266px;
+        background-size: 200px;
+        /*margin-left: 18%;*/
+    }
+
+    section:nth-child(3)>article{
+        padding-top: 24px;
+        line-height: 18px;
+        font-size: 12px;
+        padding-bottom: 49px;
+    }
+
+    section:nth-child(4)>h1:nth-child(1){
+        font-size: 35px;
+        top: 1%;
+    }
+
+    section:nth-child(4)>h1:nth-child(2){
+        font-size: 16px;
+    }
+    section:nth-child(4){
+        height: 30%;
+    }
+    section:nth-child(4)>section{
+        flex-direction: row;
+        height: 180px;
+    }
+
+    section:nth-child(4)>section>div:nth-child(1){
+        width: 95%;
+        margin-top: 0;
+        /*text-align: center;*/
+        font-size: 12px;
+        height: 190px;
+    }
+
+    section:nth-child(4)>section>div:nth-child(1)>p{
+        font-size: 10px;
+        line-height: 13px;
+    }
+
+    section:nth-child(4)>section>div:nth-child(2){
+        width: 150px;
+        height: 120px;
+        background-size: 120px !important;
+        margin-top: 5%;
+        margin-left: 1%;
+    }
+    section:nth-child(5){
+        height: 40vh;
+    }
+    section:nth-child(5)>h1:nth-child(1){
+        font-size: 35px;
+        top: 1%;
+    }
+
+    section:nth-child(5)>h1:nth-child(2){
+        font-size: 16px;
+    }
+
+    section:nth-child(5)>section{
+        flex-direction: row;
+        justify-content: normal;
+        margin-top: 10px;
+    }
+
+    section:nth-child(5)>section>div{
+        width: 400px;
+        height: 220px;
+        margin-top: 20px;
+        margin-left: 2%;
+    }
+
+    section:nth-child(5)>section>div>img{
+        width: 80px;
+    }
+
+    section:nth-child(5)>section>div>h6{
+        font-size: 14px; !important;
+    }
+
+    section:nth-child(5)>section>div>p{
+        font-size: 10px;
+    }
+
+    section:nth-child(6)>h1:nth-child(1){
+        font-size: 35px;
+        top: 1%;
+    }
+    section:nth-child(6){
+        height: 30vh;
+    }
+    section:nth-child(6)>h1:nth-child(2){
+        font-size: 16px;
+    }
+
+    section:nth-child(6)>section{
+        display: flex;
+        /*grid-template-columns: repeat(2,1fr);*/
+        justify-items: center;
+        grid-gap: 15px;
+    }
+
+    section:nth-child(6)>section>div{
+        width: 70px;
+        height: 70px;
+        background-size: 70px;
+    }
+
+    section:nth-child(7)>p{
+        padding-top: 5%;
+        font-size: 12px;
+    }
+
+    section:nth-child(7)>a>div{
+        width: 150px;
+    }
+
+    section:nth-child(8)>h1:nth-child(1){
+        font-size: 35px;
+        top: 1%;
+    }
+    section:nth-child(8){
+        height: 50vh;
+    }
+    section:nth-child(8)>h1:nth-child(2){
+        font-size: 16px;
+    }
+
+    section:nth-child(8)>section{
+        flex-direction: row;
+        margin-left: 10%;
+    }
+
+    section:nth-child(8)>section>a>div{
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+
+    section:nth-child(8)>section>a>div>img{
+        width: 70px;
+    }
+
+    section:nth-child(8)>section>a>div>h6{
+        font-size: 13px;!important;
+    }
+
+    section:nth-child(9)>section>div{
+        width: 70px;
+        height: 70px;
+        background-size: 70px;
+    }
+
+    section:nth-child(9)>p{
+        padding-top: 5%;
+        font-size: 12px;
+    }
+
+    section:nth-child(9)>a>div{
+        width: 200px;
+    }
+
+    section:nth-child(10)>h1:nth-child(1){
+        font-size: 35px;
+        top: 1%;
+    }
+    section:nth-child(10){
+        height: 40vh;
+    }
+    section:nth-child(10)>h1:nth-child(2){
+        font-size: 16px;
+    }
+
+    section:nth-child(10)>section{
+        flex-direction: row;
+    }
+
+    section:nth-child(10)>section>a>div{
+        width: 130px;
+        height: 130px;
+        margin-top: 20px;
+        margin-left: 2%;
+    }
+
+    section:nth-child(10)>section>a>div>img{
+        width: 70px;
+    }
+
+    section:nth-child(10)>section>a>div>h6{
+        margin-top: 16%;
+        font-size: 12px;!important;
+    }
+
+    section:nth-child(11)>section>div{
+        width: 70px;
+        height: 70px;
+        background-size: 70px;
+    }
+
+    section:nth-child(11)>p{
+        padding-top: 5%;
+        font-size: 12px;
+    }
+
+    section:nth-child(11)>a>div{
+        width: 170px;
+    }
+
+    section:nth-child(12)>h1:nth-child(1){
+        font-size: 35px;
+        top: 1%;
+    }
+    section:nth-child(12){
+        height: 20vh;
+    }
+    section:nth-child(12)>h1:nth-child(2){
+        font-size: 16px;
+    }
+
+    section:nth-child(12)>section>a>div{
+        width: 50px;
+        height: 50px;
+        margin-left: 5px;
+    }
+
+    section:nth-child(12)>section>a>div>img{
+        width: 40px;
+    }
+
+    footer{
+        font-size: 10px;
+    }
+
+    main>a:last-child>img{
+        width: 50px;
+    }
+}
+
 @media all and (min-width: 375px) and (max-width: 425px){
 
     h4{
@@ -1746,7 +2066,6 @@ footer{
         width: 50px;
     }
 }
-
 
 /*@media all and (max-width:1024px) and (min-width: 768px){*/
 /*    h6{*/
