@@ -51,7 +51,7 @@
         </div>
     </nav>
 </header>
-</body>
+
 <main class="container">
     <section class="row p-4 m-0" >
         <nav aria-label="breadcrumb" class="text-white">
@@ -68,7 +68,7 @@
                 <div class="mb-3">
                     <label for="InputID" class="form-label text-white">Item ID</label>
                     <input type="text" class="form-control bg-black border-white text-warning focus-ring-warning"
-                           id="InputID" readonly>
+                           id="InputID">
                 </div>
                 <div class="mb-3">
                     <label for="InputDesc" class="form-label text-white">Description</label>
@@ -89,7 +89,7 @@
                            id="inputQty">
                 </div>
                 <div class="row m-0 gap-2 mt-5">
-                    <button type="submit" class="btn btn-outline-warning  col">Save</button>
+                    <button id="btnSubmit" type="button" class="btn btn-outline-warning  col">Save</button>
                     <button type="submit" class="btn btn-outline-light disabled col">Update</button>
                 </div>
                 <!--                <button type="submit" class="btn btn-outline-warning  container-fluid">Save</button>-->
@@ -107,118 +107,57 @@
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">I-001</th>
-                    <td>Dell Monitor i12</td>
-                    <td>15000</td>
-                    <td>15</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">I-002</th>
-                    <td>Lenovo Monitor l24</td>
-                    <td>18000</td>
-                    <td>12</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">I-003</th>
-                    <td>CM Casing</td>
-                    <td>7000</td>
-                    <td>20</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">I-004</th>
-                    <td>P47 Headset</td>
-                    <td>2000</td>
-                    <td>10</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">I-005</th>
-                    <td>SDD 128GB</td>
-                    <td>5000</td>
-                    <td>30</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">I-006</th>
-                    <td>SDD 256GB</td>
-                    <td>7600</td>
-                    <td>8</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">I-007</th>
-                    <td>Used PC i3</td>
-                    <td>25000</td>
-                    <td>07</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">I-008</th>
-                    <td>Used PC i5</td>
-                    <td>32000</td>
-                    <td>15</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">I-009</th>
-                    <td>PL Keyboard</td>
-                    <td>1200</td>
-                    <td>20</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">I-010</th>
-                    <td>GL Mouse</td>
-                    <td>850</td>
-                    <td>15</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
+                <tbody id="tableBody">
 
                 </tbody>
             </table>
+<!--            <button id="dltButton" type="button" class="btn btn-outline-danger"> delete</button>-->
         </div>
     </section>
 </main>
+<script>
+    // document.getElementById("dltButton").style.display="none";
+
+    document.getElementById("btnSubmit").addEventListener("click", function (){
+        var cusID=document.getElementById("InputID").value;
+        var cusName=document.getElementById("InputDesc").value;
+        var cusAddress=document.getElementById("inputUnitPrice").value;
+        var cusContact=document.getElementById("inputQty").value;
+
+
+        // Get the table body element in which you want to add row
+        let table = document.getElementById("tableBody");
+
+        // Create row element
+        let row = document.createElement("tr")
+
+        // Create cells
+        let c1 = document.createElement("td")
+        let c2 = document.createElement("td")
+        let c3 = document.createElement("td")
+        let c4 = document.createElement("td")
+        let c5= document.createElement("btn")
+
+
+
+        // Insert data to cells
+        c1.innerText = cusID
+        c2.innerText = cusName
+        c3.innerText = cusAddress
+        c4.innerText = cusContact
+        c5.innerText = "delete"
+
+        // Append cells to row
+        row.appendChild(c1);
+        row.appendChild(c2);
+        row.appendChild(c3);
+        row.appendChild(c4);
+        row.appendChild(c5);
+
+        // Append row to table body
+        table.appendChild(row)
+
+    });
+</script>
+</body>
 </html>
