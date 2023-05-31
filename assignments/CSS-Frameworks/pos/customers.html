@@ -89,7 +89,7 @@
             </form>
         </div>
         <div class="col border-white m-3  border-start">
-            <table  class="table text-white">
+            <table  class="table text-white" id="table">
                 <thead class="text-warning">
                 <tr>
                     <th scope="col">ID</th>
@@ -145,6 +145,32 @@
             table.appendChild(row)
 
     });
+
+    // Get the table element
+    var table = document.getElementById("tableBody");
+
+    // Get all the rows in the table
+    var rows = table.getElementsByTagName("tr");
+
+    // Attach click event listeners to each row
+    for (var i = 1; i < rows.length; i++) {
+        rows[i].addEventListener("click", function() {
+            // Get the cells in the clicked row
+            var cells = this.getElementsByTagName("td");
+
+            // Get the data from the cells
+            var id = cells[0].textContent;
+            var name = cells[1].textContent;
+            var address = cells[2].textContent;
+            var contact = cells[3].textContent;
+
+            // Set the input field values with the data
+            document.getElementById("InputID").value = id;
+            document.getElementById("InputName").value = name;
+            document.getElementById("inputAddress").value = address;
+            document.getElementById("inputContact").value = contact;
+        });
+    }
 </script>
 </body>
 </html>
