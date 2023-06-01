@@ -147,30 +147,41 @@
     });
 
     // Get the table element
-    var table = document.getElementById("tableBody");
+    // var table1 = document.getElementById("tableBody");
+    //
+    // // Get all the rows in the table
+    // var rows = table1.getElementsByTagName("tr");
+    //
+    // // Attach click event listeners to each row
+    // for (var i = 1; i < rows.length; i++) {
+    //     rows[i].addEventListener("click", function(event) {
+    //         event.
+    //         // Get the cells in the clicked row
+    //         var cells = this.getElementsByTagName("td");
+    //
+    //         // Get the data from the cells
+    //         var id = cells[0].textContent;
+    //         var name = cells[1].textContent;
+    //         var address = cells[2].textContent;
+    //         var contact = cells[3].textContent;
+    //
+    //         // Set the input field values with the data
+    //         document.getElementById("InputID").value = id;
+    //         document.getElementById("InputName").value = name;
+    //         document.getElementById("inputAddress").value = address;
+    //         document.getElementById("inputContact").value = contact;
+    //     });
+    // }
+    let selectedRow;
+    document.getElementById("tableBody").addEventListener("click",function (event){
+        selectedRow=event.target.closest("tr");
 
-    // Get all the rows in the table
-    var rows = table.getElementsByTagName("tr");
+        document.getElementById("InputID").value=selectedRow.cells[0].textContent;
+        document.getElementById("InputName").value=selectedRow.cells[1].textContent;
+        document.getElementById("inputAddress").value=selectedRow.cells[2].textContent;
+        document.getElementById("inputContact").value=selectedRow.cells[3].textContent;
 
-    // Attach click event listeners to each row
-    for (var i = 1; i < rows.length; i++) {
-        rows[i].addEventListener("click", function() {
-            // Get the cells in the clicked row
-            var cells = this.getElementsByTagName("td");
-
-            // Get the data from the cells
-            var id = cells[0].textContent;
-            var name = cells[1].textContent;
-            var address = cells[2].textContent;
-            var contact = cells[3].textContent;
-
-            // Set the input field values with the data
-            document.getElementById("InputID").value = id;
-            document.getElementById("InputName").value = name;
-            document.getElementById("inputAddress").value = address;
-            document.getElementById("inputContact").value = contact;
-        });
-    }
+    });
 </script>
 </body>
 </html>
