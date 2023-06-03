@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knight</title>
+    <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no">
+
+    <style>
+        body{
+            background-color: black;
+        }
+        section{
+            width: 1200px;
+            height: 320px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section>div{
+            height: 100px;
+            flex-grow: 1;
+            /*//border: 1px solid white;*/
+            border-radius: 20px;
+            background-color: white;
+        }
+
+        section>div:last-child{
+            position: absolute;
+            justify-self: end;
+            align-self: end;
+            right: 0;
+            left: 0;
+            margin: auto;
+            align-items: center;
+            justify-items: center;
+            border: none;
+            background-color: black;
+        }
+        section>button{
+            position: absolute;
+            justify-self: center;
+            align-self: end;
+        }
+        section>button:nth-child(9){
+            position: absolute;
+            justify-self: end;
+            align-self: end;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<section>
+    <audio id="bgMusic" loop>
+<!--        <source src="assets/Knight-Rider-Sms-_-Knight-Rider-_-Theme.ogg" type="audio/ogg">-->
+        <source src="assets/scanner_kitt.mp3" type="audio/mpeg">
+
+    </audio>
+    <div id="b1"></div>
+    <div id="b2"></div>
+    <div id="b3"></div>
+    <div id="b4"></div>
+    <div id="b5"></div>
+    <div id="b6"></div>
+    <div id="b7"></div>
+
+    <div>
+        <button id="btnStart" type="button">Start</button>
+        <button id="btnStop">Stop</button>
+    </div>
+
+
+</section>
+
+
+<script src="jquery-3.7.0.min.js"></script>
+<script>
+    var box1=document.getElementById("b1");
+    var box2=document.getElementById("b2");
+    var box3=document.getElementById("b3");
+    var box4=document.getElementById("b4");
+    var box5=document.getElementById("b5");
+    var box6=document.getElementById("b6");
+    var box7=document.getElementById("b7");
+
+    var colors=["red","white","white","white","white","white","pink"];
+    var boxes=[box1,box2,box3,box4,box5,box6,box7];
+
+    var interval;
+    var insideInter;
+    var count=0;
+
+    $("#btnStart").click(function () {
+        document.getElementById("bgMusic").play();
+
+        // interval=setInterval(function () {
+            if(count<1){
+                clearInterval(insideInter);
+                interval=setInterval(function (){
+                    for (var i = 0; i < boxes.length; i++) {
+                        boxes[i].style.backgroundColor=colors[i];
+
+                    }
+
+                    colors.unshift(colors[6]);
+                    colors.pop();
+                    count++;
+                    if (count==7){
+                        boxes.reverse()
+                        count=0;
+                        //clearInterval(interval);
+
+
+                    }
+                    //boxes.reverse();
+                },150);
+
+               // clearInterval(interval);
+            }
+
+            // if (count==1){
+            //     clearInterval(interval);
+            //     insideInter=setInterval(function (){
+            //         for (var i = 0; i < boxes.length; i++) {
+            //             boxes[i].style.backgroundColor=colors[i];
+            //
+            //         }
+            //         colors.unshift(colors[6]);
+            //         colors.pop();
+            //
+            //
+            //         boxes.reverse();
+            //         count=0;
+            //     },100);
+            // }
+
+
+
+
+
+            // for (let i = boxes.length; i >0 ; i--) {
+            //     boxes[i].style.backgroundColor=colors[i];
+            // }
+            // colors.unshift(colors[0]);
+
+        // },1000);
+
+
+        // interval=setInterval(function () {
+        //
+        //     for (var i = 6; i >= 0; i--) {
+        //         boxes[i].style.backgroundColor=colors[i];
+        //     }
+        //     colors.shift();
+        //
+        // },1000);
+
+    });
+
+
+    $("#btnStop").click(function () {
+        document.getElementById("bgMusic").pause();
+
+        clearInterval(interval);
+        clearInterval(insideInter);
+
+    });
+
+
+</script>
+
+</body>
+</html>
