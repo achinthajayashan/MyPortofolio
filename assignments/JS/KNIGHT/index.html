@@ -24,34 +24,67 @@
         }
 
         section>div{
-            height: 100px;
+            height: 50px;
             flex-grow: 1;
             /*//border: 1px solid white;*/
             border-radius: 20px;
             background-color: white;
         }
 
-        section>div:last-child{
-            position: absolute;
-            justify-self: end;
+        /*section>div:last-child{*/
+        /*    position: absolute;*/
+        /*    justify-self: end;*/
+        /*    align-self: end;*/
+        /*    right: 0;*/
+        /*    left: 0;*/
+        /*    margin: auto;*/
+        /*    align-items: center;*/
+        /*    justify-items: center;*/
+        /*    border: none;*/
+        /*    background-color: black;*/
+        /*}*/
+        /*section>button{*/
+        /*    position: absolute;*/
+        /*    justify-self: center;*/
+        /*    align-self: end;*/
+        /*}*/
+        /*section>button:nth-child(9){*/
+        /*    position: absolute;*/
+        /*    justify-self: end;*/
+        /*    align-self: end;*/
+        /*}*/
+
+        section:nth-child(2){
+            z-index: 3;
+        }
+
+        section:nth-child(2)>button{
             align-self: end;
-            right: 0;
-            left: 0;
-            margin: auto;
-            align-items: center;
-            justify-items: center;
-            border: none;
+            height: 30px;
+            width: 150px;
             background-color: black;
+            color: white;
+            box-shadow: 0px 0px 2px 2px white;
         }
-        section>button{
-            position: absolute;
-            justify-self: center;
-            align-self: end;
+
+        section:nth-child(2)>button:nth-child(1){
+        margin-left: 450px;
         }
-        section>button:nth-child(9){
-            position: absolute;
-            justify-self: end;
+
+        section:nth-child(3){
+            height: 700px;
+            z-index: 0;
+        }
+
+        section:nth-child(3)>progress{
+            width: 1000px;
             align-self: end;
+            margin-left: 100px;
+        }
+
+        section:nth-child(3)>button{
+            align-self: end;
+            width: 30px;
         }
     </style>
 
@@ -73,13 +106,24 @@
     <div id="b6"></div>
     <div id="b7"></div>
 
-    <div>
+</section>
+
+    <section>
         <button id="btnStart" type="button">Start</button>
         <button id="btnStop">Stop</button>
-    </div>
+    </section>
+
+    <section>
+        <progress id="prog" value="200" max="1000"></progress>
+<!--        <div>-->
+            <button id="btnSlow" type="button">-</button>
+            <button id="btnSpeed">+</button>
+<!--        </div>-->
+    </section>
 
 
-</section>
+
+
 
 
 <script src="jquery-3.7.0.min.js"></script>
@@ -96,73 +140,36 @@
     var boxes=[box1,box2,box3,box4,box5,box6,box7];
 
     var interval;
-    var insideInter;
+    //var insideInter;
     var count=0;
 
+    var v=document.getElementById("prog").value;
+
+    $('#btnSpeed').click(function (){
+        clearInterval(interval)
+        count=0;
+         v=document.getElementById("prog").value+100;
+        document.getElementById("prog").value=v;
+        lights();
+
+    });
+
+    $('#btnSlow').click(function (){
+        clearInterval(interval);
+        v=document.getElementById("prog").value-100;
+        document.getElementById("prog").value=v;
+        count=0;
+        lights();
+
+    });
+
+
     $("#btnStart").click(function () {
+        clearInterval(interval);
+        count=0;
         document.getElementById("bgMusic").play();
 
-        // interval=setInterval(function () {
-            if(count<1){
-                clearInterval(insideInter);
-                interval=setInterval(function (){
-                    for (var i = 0; i < boxes.length; i++) {
-                        boxes[i].style.backgroundColor=colors[i];
-
-                    }
-
-                    colors.unshift(colors[6]);
-                    colors.pop();
-                    count++;
-                    if (count==7){
-                        boxes.reverse()
-                        count=0;
-                        //clearInterval(interval);
-
-
-                    }
-                    //boxes.reverse();
-                },150);
-
-               // clearInterval(interval);
-            }
-
-            // if (count==1){
-            //     clearInterval(interval);
-            //     insideInter=setInterval(function (){
-            //         for (var i = 0; i < boxes.length; i++) {
-            //             boxes[i].style.backgroundColor=colors[i];
-            //
-            //         }
-            //         colors.unshift(colors[6]);
-            //         colors.pop();
-            //
-            //
-            //         boxes.reverse();
-            //         count=0;
-            //     },100);
-            // }
-
-
-
-
-
-            // for (let i = boxes.length; i >0 ; i--) {
-            //     boxes[i].style.backgroundColor=colors[i];
-            // }
-            // colors.unshift(colors[0]);
-
-        // },1000);
-
-
-        // interval=setInterval(function () {
-        //
-        //     for (var i = 6; i >= 0; i--) {
-        //         boxes[i].style.backgroundColor=colors[i];
-        //     }
-        //     colors.shift();
-        //
-        // },1000);
+            lights();
 
     });
 
@@ -171,9 +178,32 @@
         document.getElementById("bgMusic").pause();
 
         clearInterval(interval);
-        clearInterval(insideInter);
+        count=0;
+        clearInterval(interval);
+        //clearInterval(insideInter);
 
     });
+
+    function lights() {
+        if(count<1){
+            interval=setInterval(function (){
+                for (var i = 0; i < boxes.length; i++) {
+                    boxes[i].style.backgroundColor=colors[i];
+
+                }
+
+                colors.unshift(colors[6]);
+                //colors.pop();
+                count++;
+                if (count==7){
+                    boxes.reverse()
+                    count=0;
+                    // clearInterval(interval);
+                }
+            },v);
+
+        }
+    }
 
 
 </script>
