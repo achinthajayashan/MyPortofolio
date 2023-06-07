@@ -105,7 +105,7 @@
             </form>
         </div>
         <div class="col border-white m-3  border-start">
-            <table class="table text-white">
+            <table class="table text-white" >
                 <thead class="text-warning">
                 <tr>
                     <th scope="col">ID</th>
@@ -115,7 +115,7 @@
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
-                <tbody id="cusTableBody">
+                <tbody id="cusTableBody" >
                 </tbody>
             </table>
         </div>
@@ -648,23 +648,27 @@
 
         console.log(cusID,cusName,cusAddress,cusContact);
 
-        customers = [cusID,cusName,cusAddress,cusContact];
+        // customers = [cusID,cusName,cusAddress,cusContact];
+        //
+        // console.log(customers);
+        //
+        // var tbody=$("#cusTableBody")
+        // var newRow =$("tr").create;
+        //
+        //
+        //
+        // for (var i = 0; i < customers.length; i++) {
+        //     let list="<td>"+customers[i]+"</td>";
+        //
+        //     // let tCusDetail=$("td").create;
+        //     // tCusDetail=customers[i];
+        //     //console.log(tCusDetail);
+        //     newRow.append(list);
+        // }
+        // tbody.appendTo(tbody);
 
-        console.log(customers);
-
-        var tbody=$("#cusTableBody")
-        var newRow =$("tr");
-
-
-
-        for (var i = 0; i < customers.length; i++) {
-
-            let tCusDetail=$("td").create;
-            tCusDetail=customers[i];
-            console.log(tCusDetail);
-            newRow.append(tCusDetail);
-        }
-        tbody.appendTo(tbody);
+        let tr=$('<tr> <td>'+cusID+'<td> <td>'+cusName+'<td> <td>'+cusAddress+'<td> <td>'+cusContact+'</td></tr>');
+        $("#cusTableBody").append(tr)
     });
 
 
