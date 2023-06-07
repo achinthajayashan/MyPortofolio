@@ -638,7 +638,14 @@
     let cusAddress;
     let cusContact;
 
-    let customers;
+    // let customerIds;
+    // let customerNames;
+    // let customerAddresses;
+    // let customercontacts;
+    let tr;
+
+    let customerDetails;
+    let allCustomers=[];
 
     $("#btnSaveCus").click(function () {
         cusID=$('#InputCID').val();
@@ -648,27 +655,24 @@
 
         console.log(cusID,cusName,cusAddress,cusContact);
 
-        // customers = [cusID,cusName,cusAddress,cusContact];
-        //
-        // console.log(customers);
-        //
-        // var tbody=$("#cusTableBody")
-        // var newRow =$("tr").create;
-        //
-        //
-        //
-        // for (var i = 0; i < customers.length; i++) {
-        //     let list="<td>"+customers[i]+"</td>";
-        //
-        //     // let tCusDetail=$("td").create;
-        //     // tCusDetail=customers[i];
-        //     //console.log(tCusDetail);
-        //     newRow.append(list);
-        // }
-        // tbody.appendTo(tbody);
+        customerDetails=[cusID,cusName,cusAddress,cusContact];
+        allCustomers.push(customerDetails);
 
-        let tr=$('<tr> <td>'+cusID+'</td> <td>'+cusName+'</td> <td>'+cusAddress+'</td> <td>'+cusContact+'</td></tr>');
+        console.log(allCustomers);
+
+        // customerIds=[cusID].push();
+        // customerNames=[cusName].push();
+        // customerAddresses=[cusAddress].push();
+        // customercontacts=[cusContact].push();
+
+        //for (let i=0; i<=customerIds.length; i++){
+            tr=$('<tr> <td>'+customerDetails[0]+'</td> <td>'+customerDetails[1]+'</td> <td>'+customerDetails[2]+'</td> <td>'+customerDetails[3]+'</td></tr>');
+
+        //}
         $("#cusTableBody").append(tr)
+
+        // let tr=$('<tr> <td>'+cusID+'</td> <td>'+cusName+'</td> <td>'+cusAddress+'</td> <td>'+cusContact+'</td></tr>');
+        // $("#cusTableBody").append(tr)
     });
 
 
