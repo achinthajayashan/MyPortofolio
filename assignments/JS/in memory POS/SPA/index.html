@@ -66,7 +66,6 @@
         </div>
     </section>
 </main>
-
 <main id="customer" class="container">
     <section class="row p-4 m-0 object-fit-contain">
         <nav aria-label="breadcrumb" class="text-white">
@@ -97,8 +96,9 @@
                     <input type="tel" class="form-control bg-black border-white text-warning focus-ring-warning focus-ring " id="inputContact">
                 </div>
                 <div class="row m-0 gap-2 mt-5">
-                    <button type="submit" class="btn btn-outline-warning  col">Save</button>
+                    <button id="btnSaveCustomer" type="button" class="btn btn-outline-warning  col">Save</button>
                     <button type="submit" class="btn btn-outline-light disabled col">Update</button>
+                    <button id="btnAllCus" type="button" class="btn btn-outline-light disabled col">Get All</button>
                 </div>
                 <!--                <button type="submit" class="btn btn-outline-warning  container-fluid">Save</button>-->
                 <!--                <button type="submit" class="btn btn-outline-light disabled container-fluid">Update</button>-->
@@ -116,129 +116,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">7</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">8</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">9</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">10</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">11</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">12</th>
-                    <td>Achintha</td>
-                    <td>Matara</td>
-                    <td>078715585</td>
-                    <td><button type="button" class="btn btn-outline-warning">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </div>
     </section>
 </main>
-
 <main id="item" class="container">
     <section class="row p-4 m-0" >
         <nav aria-label="breadcrumb" class="text-white">
@@ -408,7 +290,6 @@
         </div>
     </section>
 </main>
-
 <main id="orders" class="container col">
     <nav aria-label="breadcrumb" class="text-white">
         <ol class="breadcrumb">
@@ -503,7 +384,6 @@
         </table>
     </section>
 </main>
-
 <main id="placeOrder" class="container-fluid">
     <section class="row p-4 m-0">
         <nav aria-label="breadcrumb" class="text-white">
@@ -748,6 +628,70 @@
         document.getElementById("item").style.display="none";
         document.getElementById("orders").style.display="none";
         document.getElementById("placeOrder").style.display="none";
+    });
+
+
+    var customerDB = []; //literal base array
+    // var cusArray=new Array(); //function base array
+    // customerDB[1][2];
+    <!-- Select Save Customer Btn and Bind an event   -->
+    $("#btnSaveCustomer").click(function () {
+
+        //get values of the text fields
+        let customerID = $("#txtCustomerID").val();
+        let customerName = $("#txtCustomerName").val();
+        let customerAddress = $("#txtCustomerAddress").val();
+        let customerSalary = $("#txtCustomerSalary").val();
+
+        //set customer details to another array
+        // let customer=[customerID,customerName,customerAddress,customerSalary];
+
+        let customerOb = {
+            id: cu,
+            name: customerName,
+            address: customerAddress,
+            salary: customerSalary
+        }
+
+        //add customer record to the customer array
+        customerDB.push(customerOb);
+
+
+        //create row and add text field values
+        // let row=`<tr>
+        //             <td>${customerID}</td>
+        //             <td>${customerName}</td>
+        //             <td>${customerAddress}</td>
+        //             <td>${customerSalary}</td>
+        //            </tr>`;
+        // //and then append the row to tableBody
+        // $("#tblCustomer").append(row);
+
+    });
+
+
+    $("#btnGetAll").click(function () {
+
+        //clear all tbody data before add
+        $("#tblCustomer").empty();
+
+        //get all customers
+        for (let i = 0; i < customerDB.length; i++) {
+            let id = customerDB[i].id;
+            let name = customerDB[i].name;
+            let address = customerDB[i].address;
+            let salary = customerDB[i].salary;
+
+            let row = `<tr>
+                     <td>${id}</td>
+                     <td>${name}</td>
+                     <td>${address}</td>
+                     <td>${salary}</td>
+                    </tr>`;
+
+            // //and then append the row to tableBody
+            $("#tblCustomer").append(row);
+        }
     });
 
 

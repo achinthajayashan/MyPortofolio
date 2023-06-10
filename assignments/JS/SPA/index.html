@@ -99,6 +99,7 @@
                 <div class="row m-0 gap-2 mt-5">
                     <button id="btnSaveCus"type="button" class="btn btn-outline-warning  col">Save</button>
                     <button type="submit" class="btn btn-outline-light disabled col">Update</button>
+                    <button id="btnGetAllCus" type="button" class="btn btn-outline-light col">Get All</button>
                 </div>
                 <!--                <button type="submit" class="btn btn-outline-warning  container-fluid">Save</button>-->
                 <!--                <button type="submit" class="btn btn-outline-light disabled container-fluid">Update</button>-->
@@ -119,6 +120,30 @@
                 </tbody>
             </table>
         </div>
+    </section>
+</main>
+
+<main id="allCustomers" class="container col">
+    <nav aria-label="breadcrumb" class="text-white">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item text-white"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Orders</li>
+        </ol>
+    </nav>
+    <section class="row  m-auto">
+        <table class="table text-white container col">
+            <thead class="text-warning">
+            <tr>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Contact</th>
+            </tr>
+            </thead>
+            <tbody id="allcustomersBody">
+
+            </tbody>
+        </table>
     </section>
 </main>
 
@@ -592,6 +617,7 @@
     document.getElementById("item").style.display="none";
     document.getElementById("orders").style.display="none";
     document.getElementById("placeOrder").style.display="none";
+    document.getElementById("allCustomers").style.display="none";
 
     document.getElementById("btnCustomer").addEventListener("click",function (){
         document.getElementById("home").style.display="none";
@@ -599,6 +625,7 @@
         document.getElementById("item").style.display="none";
         document.getElementById("orders").style.display="none";
         document.getElementById("placeOrder").style.display="none";
+        document.getElementById("allCustomers").style.display="none";
     });
 
     document.getElementById("btnItem").addEventListener("click",function (){
@@ -607,6 +634,7 @@
         document.getElementById("item").style.display="block";
         document.getElementById("orders").style.display="none";
         document.getElementById("placeOrder").style.display="none";
+        document.getElementById("allCustomers").style.display="none";
     });
 
     document.getElementById("btnOrders").addEventListener("click",function (){
@@ -615,6 +643,7 @@
         document.getElementById("item").style.display="none";
         document.getElementById("orders").style.display="block";
         document.getElementById("placeOrder").style.display="none";
+        document.getElementById("allCustomers").style.display="none";
     });
 
     document.getElementById("btnPlaceOrder").addEventListener("click",function (){
@@ -623,6 +652,7 @@
         document.getElementById("item").style.display="none";
         document.getElementById("orders").style.display="none";
         document.getElementById("placeOrder").style.display="block";
+        document.getElementById("allCustomers").style.display="none";
     });
 
     document.getElementById("btnHome").addEventListener("click",function (){
@@ -631,6 +661,7 @@
         document.getElementById("item").style.display="none";
         document.getElementById("orders").style.display="none";
         document.getElementById("placeOrder").style.display="none";
+        document.getElementById("allCustomers").style.display="none";
     });
 
     let cusID;
@@ -643,6 +674,7 @@
     // let customerAddresses;
     // let customercontacts;
     let tr;
+    let getCustr;
 
     let customerDetails;
     let allCustomers=[];
@@ -655,8 +687,16 @@
 
         console.log(cusID,cusName,cusAddress,cusContact);
 
-        customerDetails=[cusID,cusName,cusAddress,cusContact];
-        allCustomers.push(customerDetails);
+        let customerDetail={
+            ID:cusID,
+            name:cusName,
+            address:cusAddress,
+            contact:cusContact
+
+        }
+
+        //customerDetails=[cusID,cusName,cusAddress,cusContact];
+        allCustomers.push(customerDetail);
 
         console.log(allCustomers);
 
@@ -666,13 +706,28 @@
         // customercontacts=[cusContact].push();
 
         //for (let i=0; i<=customerIds.length; i++){
-            tr=$('<tr> <td>'+customerDetails[0]+'</td> <td>'+customerDetails[1]+'</td> <td>'+customerDetails[2]+'</td> <td>'+customerDetails[3]+'</td></tr>');
+            tr=$('<tr> <td>'+customerDetail.ID+'</td> <td>'+customerDetail.name+'</td> <td>'+customerDetail.address+'</td> <td>'+customerDetail.contact+'</td></tr>');
 
         //}
         $("#cusTableBody").append(tr)
 
         // let tr=$('<tr> <td>'+cusID+'</td> <td>'+cusName+'</td> <td>'+cusAddress+'</td> <td>'+cusContact+'</td></tr>');
         // $("#cusTableBody").append(tr)
+    });
+
+    $('#btnGetAllCus').click(function () {
+        document.getElementById("home").style.display="none";
+        document.getElementById("customer").style.display="none";
+        document.getElementById("item").style.display="none";
+        document.getElementById("orders").style.display="none";
+        document.getElementById("placeOrder").style.display="none";
+        document.getElementById("allCustomers").style.display="block";
+
+        for (let i=0; i<=allCustomers.length; i++){
+        getCustr=$('<tr> <td>'+allCustomers[[i][0]]+'</td> <td>'+allCustomers[[i][1]]+'</td> <td>'+allCustomers[[i][2]]+'</td> <td>'+allCustomers[[i][3]]+'</td></tr>');
+
+        }
+        $("#allcustomersBody").append(getCustr)
     });
 
 
