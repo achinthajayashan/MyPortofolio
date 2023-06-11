@@ -14,7 +14,7 @@
 
         <div class="row bg-dark mb-0 pt-3 ms-3 me-3 gap-3" style="height: 100px ">
             <button id="ce" class="col-2 bg-primary text-white border-white">CE</button>
-            <input id="display" type="text" class="bg-dark text-white border-bottom border-white col text-end" style="font-size: 40px"readonly>
+            <input id="display" type="text" class="bg-dark text-white border-bottom border-white col text-end" style="font-size: 50px"readonly>
         </div>
         <div class="row bg-dark mb-4 pt-3 ms-3 me-3 gap-3" style="height: 50px ">
             <input id="display2" type="text" class="bg-dark text-white border-bottom border-white col text-end" style="font-size: 20px"readonly>
@@ -58,9 +58,11 @@
     let total;
 
     $('#display').val(0);
+    $('#display2').val('Calculator Developed By Achintha Jayashan   ');
 
     $('#ce').click(function () {
         $('#display').val(0);
+        $('#display2').val('Calculator Developed By Achintha Jayashan   ');
     });
 
     $('#1').click(function () {
@@ -190,21 +192,23 @@
     })
 
     $('#equal').click(function () {
+
          value2=$('#display').val();
+
         if (method=='+'){
-            total=parseInt(value1)+parseInt(value2);
+            total=parseFloat(value1)+parseFloat(value2);
         }
 
          if (method=='-'){
-            total=parseInt(value1)-parseInt(value2);
+            total=parseFloat(value1)-parseFloat(value2);
         }
 
         if (method=='*'){
-            total=parseInt(value1)*parseInt(value2);
+            total=parseFloat(value1)*parseFloat(value2);
         }
 
         if (method=='/'){
-            total=parseInt(value1)/parseInt(value2);
+            total=parseFloat(value1)/parseFloat(value2);
         }
 
         $('#display').val(total);
