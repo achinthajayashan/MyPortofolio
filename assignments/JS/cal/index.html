@@ -20,28 +20,28 @@
             <button id="7" class="col bg-dark text-white border-white " >7</button>
             <button id="8" class="col bg-dark text-white border-white">8</button>
             <button id="9" class="col bg-dark text-white border-white">9</button>
-            <button id="+" class="col bg-success text-white border-white">+</button>
+            <button id="add" class="col bg-success text-white border-white">+</button>
         </div>
 
         <div class="row bg-dark gap-2 mb-3 ms-3 me-3 " style="height: 80px; font-size: 30px">
             <button id="4" class="col bg-dark text-white border-white" >4</button>
             <button id="5" class="col bg-dark text-white border-white">5</button>
             <button id="6" class="col bg-dark text-white border-white">6</button>
-            <button id="-" class="col bg-success text-white border-white">-</button>
+            <button id="substract" class="col bg-success text-white border-white">-</button>
         </div>
 
         <div class="row bg-dark gap-2 mb-3 ms-3 me-3 " style="height: 80px; font-size: 30px">
             <button id="1" class="col bg-dark text-white border-white" >1</button>
             <button id="2" class="col bg-dark text-white border-white">2</button>
             <button id="3" class="col bg-dark text-white border-white">3</button>
-            <button id="/" class="col bg-success text-white border-white">/</button>
+            <button id="divide" class="col bg-success text-white border-white">/</button>
         </div>
 
         <div class="row bg-dark gap-2 mb-3 ms-3 me-3 " style="height: 80px; font-size: 30px">
             <button id="0" class="col bg-dark text-white border-white" >0</button>
-            <button id="." class="col bg-dark text-white border-white">.</button>
-            <button id="=" class="col bg-secondary text-white border-white">=</button>
-            <button id="*" class="col bg-success text-white border-white">*</button>
+            <button id="pulstop" class="col bg-dark text-white border-white">.</button>
+            <button id="equal" class="col bg-secondary text-white border-white">=</button>
+            <button id="multiply" class="col bg-success text-white border-white">*</button>
         </div>
 
     </section>
@@ -49,6 +49,10 @@
 
 <script src="assets/jquery-3.7.0.min.js"></script>
 <script>
+    let value1;
+    let value2;
+    let method;
+    let total;
 
     $('#display').val(0);
 
@@ -57,6 +61,7 @@
     });
 
     $('#1').click(function () {
+        //$(this).css("background-color","yellow");
         if ($("#display").val() == 0)
             $("#display").val($(this).text());
         else
@@ -135,6 +140,67 @@
             $("#display").val($(
                 "#display").val() + $(this).text());
     });
+
+    $('#pulstop').click(function () {
+        if ($("#display").val() == 0)
+            $("#display").val($(this).text());
+        else
+            $("#display").val($(
+                "#display").val() + $(this).text());
+    });
+
+    $('#add').click(function () {
+        value1=$('#display').val();
+
+        $('#display').val(0);
+
+         method=$(this).text();
+    })
+
+    $('#substract').click(function () {
+        value1=$('#display').val();
+
+        $('#display').val(0);
+
+        method=$(this).text();
+    })
+
+    $('#multiply').click(function () {
+        value1=$('#display').val();
+
+        $('#display').val(0);
+
+        method=$(this).text();
+    })
+
+    $('#divide').click(function () {
+        value1=$('#display').val();
+
+        $('#display').val(0);
+
+        method=$(this).text();
+    })
+
+    $('#equal').click(function () {
+         value2=$('#display').val();
+        if (method=='+'){
+            total=parseInt(value1)+parseInt(value2);
+        }
+
+         if (method=='-'){
+            total=parseInt(value1)-parseInt(value2);
+        }
+
+        if (method=='*'){
+            total=parseInt(value1)*parseInt(value2);
+        }
+
+        if (method=='/'){
+            total=parseInt(value1)-parseInt(value2);
+        }
+
+        $('#display').val(total);
+    })
 
 </script>
 </body>
