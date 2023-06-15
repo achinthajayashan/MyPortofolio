@@ -97,8 +97,11 @@
                 </div>
                 <div class="row m-0 gap-2 mt-5">
                     <button id="btnSaveCustomer" type="button" class="btn btn-outline-warning  col">Save</button>
-                    <button type="submit" class="btn btn-outline-light disabled col">Update</button>
+                    <button id="btnUpdateCus" type="button" class="btn btn-outline-light  col">Update</button>
                     <button id="btnAllCus" type="button" class="btn btn-outline-light col">Get All</button>
+                </div>
+                <div class="row m-0 gap-2 mt-5">
+                    <button id="btnDeleteCustomer" type="button" class="btn btn-outline-danger  col">Delete</button>
                 </div>
                 <!--                <button type="submit" class="btn btn-outline-warning  container-fluid">Save</button>-->
                 <!--                <button type="submit" class="btn btn-outline-light disabled container-fluid">Update</button>-->
@@ -530,31 +533,14 @@
                    </tr>`;
         //and then append the row to tableBody
         $("#tableBodyCus").append(row);
+        bindEvents();
 
     });
 
     $("#btnAllCus").click(function () {
 
         //clear all tbody data before add
-        $("#tableBodyCus").empty();
-
-        //get all customers
-        for (let i = 0; i < customerDB.length; i++) {
-            let id = customerDB[i].id;
-            let name = customerDB[i].name;
-            let address = customerDB[i].address;
-            let salary = customerDB[i].contactNum;
-
-            let row = `<tr>
-                     <td>${id}</td>
-                     <td>${name}</td>
-                     <td>${address}</td>
-                     <td>${salary}</td>
-                    </tr>`;
-
-            // //and then append the row to tableBody
-            $("#tableBodyCus").append(row);
-        }
+        getAllCus();
     });
 
     //item form
@@ -588,15 +574,38 @@
                    </tr>`;
         //and then append the row to tableBody
         $("#tblBodyItem").append(row);
+        bindEventsItem();
+
+
 
         console.log(itemOb);
 
     });
 
 
-    $("#btnAllItem").click(function () {
+    function getAllCus() {
+        $("#tableBodyCus").empty();
 
-        //clear all tbody data before add
+        //get all customers
+        for (let i = 0; i < customerDB.length; i++) {
+            let id = customerDB[i].id;
+            let name = customerDB[i].name;
+            let address = customerDB[i].address;
+            let salary = customerDB[i].contactNum;
+
+            let row = `<tr>
+                     <td>${id}</td>
+                     <td>${name}</td>
+                     <td>${address}</td>
+                     <td>${salary}</td>
+                    </tr>`;
+
+            // //and then append the row to tableBody
+            $("#tableBodyCus").append(row);
+        }
+    }
+
+    function getAllItem() {
         $("#tblBodyItem").empty();
 
         //get all customers
@@ -616,6 +625,10 @@
             // //and then append the row to tableBody
             $("#tblBodyItem").append(row);
         }
+    }
+
+    $("#btnAllItem").click(function () {
+        getAllItem();
     });
 
 
@@ -673,6 +686,63 @@
         //and then append the row to tableBody
         $("#tblCartBody").append(row);
     });
+
+
+
+    function bindEvents(){
+        $('#tableBodyCus>tr').click(function (event) {
+
+            $('#InputCID').val($(this).children().eq(0).text());
+            $('#InputName').val($(this).children().eq(1).text());
+            $('#inputAddress').val($(this).children().eq(2).text());
+            $('#inputContact').val($(this).children().eq(3).text());
+
+        })
+    }
+
+    function bindEventsItem(){
+        $('#tableBodyItem>tr').click(function (event) {
+
+            $('#InputItemID').val($(this).children().eq(0).text());
+            $('#InputDesc').val($(this).children().eq(1).text());
+            $('#inputUnitPrice').val($(this).children().eq(2).text());
+            $('#inputQty').val($(this).children().eq(3).text());
+
+        })
+    }
+
+    $('#btnDeleteCustomer').click(function () {
+        for (let i = 0; i < customerDB.length; i++) {
+            if ($('#InputCID').val()==customerDB[i].id){
+                customerDB.splice(i,1);
+                getAllCus();
+                break;
+            }
+        }
+    })
+
+    $('#btnUpdateCus').click(function () {
+        for (let i = 0; i < customerDB.length; i++) {
+            if ($('#InputCID').val()==customerDB[i].id){
+                customerDB[i].name=$('#InputName').val();
+                customerDB[i].address=$('#inputAddress').val();
+                customerDB[i].contactNum=$('#inputContact').val();
+                getAllCus();
+                break;
+            }
+        }
+    });
+
+    function searchCus() {
+        for (let i = 0; i < customerDB.length; i++) {
+            if ($('#InputCID').val()==customerDB[i].id){
+                $('#InputName').val(customerDB[i].name);
+                $('#inputAddress').val(customerDB[i].address);
+                $('#inputContact').val(customerDB[i].contactNum);
+                break;
+            }
+        }
+    }
 
 
 
