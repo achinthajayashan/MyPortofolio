@@ -25,6 +25,7 @@ body{
 
 #loading-section>h1{
     font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 10px;
     position: relative;
     top: 0;
@@ -32,6 +33,16 @@ body{
     left: 0;
     right: 0;
     margin: auto;
+    animation: animate 3s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0%{
+        color: black;
+    }
+    70%{
+        color: red;
+    }
 }
 h4{
     font-size: 25px;
