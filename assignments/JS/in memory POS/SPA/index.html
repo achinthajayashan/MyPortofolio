@@ -81,19 +81,19 @@
             <form class="m-5">
                 <div class="mb-3">
                     <label for="InputCID" class="form-label text-white">Customer ID</label>
-                    <input type="text" class="form-control bg-black border-white text-warning focus-ring-warning" id="InputCID">
+                    <input type="text" class="form-control  border-white text-warning focus-ring-warning" id="InputCID">
                 </div>
                 <div class="mb-3">
                     <label for="InputName" class="form-label text-white">Name</label>
-                    <input type="text" class="form-control bg-black border-white text-warning focus-ring-warning focus-ring" id="InputName">
+                    <input type="text" class="form-control  border-white text-warning focus-ring-warning focus-ring" id="InputName">
                 </div>
                 <div class="mb-3">
                     <label for="inputAddress" class="form-label text-white">Address</label>
-                    <input type="text" class="form-control bg-black border-white text-warning focus-ring-warning focus-ring" id="inputAddress">
+                    <input type="text" class="form-control  border-white text-warning focus-ring-warning focus-ring" id="inputAddress">
                 </div>
                 <div class="mb-3">
                     <label for="inputContact" class="form-label text-white">Contact</label>
-                    <input type="tel" class="form-control bg-black border-white text-warning focus-ring-warning focus-ring " id="inputContact">
+                    <input type="tel" class="form-control  border-white text-warning focus-ring-warning focus-ring " id="inputContact">
                 </div>
                 <div class="row m-0 gap-2 mt-5">
                     <button id="btnSaveCustomer" type="button" class="btn btn-outline-warning  col">Save</button>
@@ -454,6 +454,11 @@
         document.getElementById("item").style.display="none";
         document.getElementById("orders").style.display="none";
         document.getElementById("placeOrder").style.display="none";
+
+        $('#InputCID').css("background-color","black", "!important");
+        $('#InputName').css("background-color","black", "!important");
+        $('#inputAddress').css("background-color","black", "!important");
+        $('#inputContact').css("background-color","black", "!important");
     });
 
     document.getElementById("btnItem").addEventListener("click",function (){
@@ -503,51 +508,66 @@
     });
 
 //customer form
+    var regexCusID=/^C\d{2}-\d{3}$/;
+    var regexCusName=/^[A-Za-z]{1,10}$/;
+    var regexCusAddress=/^[A-Za-z]{1,10}$/;
+    var regexCusContact=/^0\d{9}$/;
+
+
     var customerDB = [];
 
     $("#btnSaveCustomer").click(function () {
 
         //get values of the text fields
-        let customerID = $("#InputCID").val();
-        let customerName = $("#InputName").val();
-        let customerAddress = $("#inputAddress").val();
-        let customerContact = $("#inputContact").val();
-
-        let customerOb = {
-            id: customerID,
-            name: customerName,
-            address: customerAddress,
-            contactNum: customerContact
-        }
-
-        //add customer record to the customer array
-        customerDB.push(customerOb);
+        saveCustomer();
 
 
-        //create row and add text field values
-        let row=`<tr>
+    });
+
+    function saveCustomer() {
+        if (regexCusID.test($("#InputCID").val())&&regexCusName.test($("#InputName").val())&&regexCusAddress.test($("#inputAddress").val())&&regexCusContact.test($("#inputContact").val())){
+            let customerID = $("#InputCID").val();
+            let customerName = $("#InputName").val();
+            let customerAddress = $("#inputAddress").val();
+            let customerContact = $("#inputContact").val();
+
+            let customerOb = {
+                id: customerID,
+                name: customerName,
+                address: customerAddress,
+                contactNum: customerContact
+            }
+
+            //add customer record to the customer array
+            customerDB.push(customerOb);
+
+
+            //create row and add text field values
+            let row=`<tr>
                     <td>${customerOb.id}</td>
                     <td>${customerOb.name}</td>
                     <td>${customerOb.address}</td>
                     <td>${customerOb.contactNum}</td>
                    </tr>`;
-        //and then append the row to tableBody
-        $("#tableBodyCus").append(row);
-        bindEvents();
+            //and then append the row to tableBody
+            $("#tableBodyCus").append(row);
+            clearCusInputs();
+            bindEvents();
+        }
 
-    });
+    }
 
     $("#btnAllCus").click(function () {
 
         //clear all tbody data before add
         getAllCus();
     });
-
-    //item form
+//item form
     var itemDB = [];
     $("#btnSaveItem").click(function () {
         console.log("clicked");
         //get values of the text fields
+
         let itemID = $("#InputItemID").val();
         let desc = $("#InputDesc").val();
         let unitPrice = $("#inputUnitPrice").val();
@@ -581,8 +601,6 @@
         console.log(itemOb);
 
     });
-
-
     function getAllCus() {
         $("#tableBodyCus").empty();
 
@@ -604,7 +622,6 @@
             $("#tableBodyCus").append(row);
         }
     }
-
     function getAllItem() {
         $("#tblBodyItem").empty();
 
@@ -630,7 +647,6 @@
     $("#btnAllItem").click(function () {
         getAllItem();
     });
-
 
     $('#selectCusId').change(function(){ //the event here is change
 
@@ -686,9 +702,6 @@
         //and then append the row to tableBody
         $("#tblCartBody").append(row);
     });
-
-
-
     function bindEvents(){
         $('#tableBodyCus>tr').click(function (event) {
 
@@ -699,7 +712,6 @@
 
         })
     }
-
     function bindEventsItem(){
         $('#tableBodyItem>tr').click(function (event) {
 
@@ -716,6 +728,7 @@
             if ($('#InputCID').val()==customerDB[i].id){
                 customerDB.splice(i,1);
                 getAllCus();
+                clearCusInputs();
                 break;
             }
         }
@@ -729,14 +742,11 @@
                 customerDB[i].contactNum=$('#inputContact').val();
                 getAllCus();
                 alert("Updated Successfully !")
-                break;
-            }else{
-                alert("Customer Not Found !")
+                clearCusInputs();
                 break;
             }
         }
     });
-
     function searchCus() {
         for (let i = 0; i < customerDB.length; i++) {
             if ($('#InputCID').val()==customerDB[i].id){
@@ -747,6 +757,83 @@
             }
         }
     }
+    function clearCusInputs(){
+        $('#InputCID,#InputName,#inputAddress,#inputContact').val("");
+
+        $('#InputCID').focus();
+    }
+
+    $('#InputCID,#InputName,#inputAddress,#inputContact').keydown(function (e) {
+        if (e.keyCode==9){
+            e.preventDefault();
+        }
+
+        if (e.keyCode==13){
+
+        }
+    });
+
+
+
+    $('#InputCID').keydown(function (e) {
+        if (e.keyCode == 13 && regexCusID.test($(this).val())) {
+           $('#InputName').focus();
+            $(this).css("background-color","black", "!important");
+        }
+    });
+
+    $('#InputCID').keyup(function (e) {
+        if (regexCusID.test($(this).val())) {
+            $(this).css("background-color","green", "!important");
+        }else{
+            $(this).css("background-color","red", "!important");
+        }
+    });
+
+    $('#InputName').keydown(function (e) {
+        if (e.keyCode == 13 && regexCusName.test($(this).val())) {
+            $('#inputAddress').focus();
+            $(this).css("background-color","black", "!important");
+        }
+    });
+
+    $('#InputName').keyup(function (e) {
+        if (regexCusName.test($(this).val())) {
+            $(this).css("background-color","green", "!important");
+        }else{
+            $(this).css("background-color","red", "!important");
+        }
+    });
+
+    $('#inputAddress').keydown(function (e) {
+        if (e.keyCode == 13 && regexCusAddress.test($(this).val())) {
+            $('#inputContact').focus();
+            $(this).css("background-color","black", "!important");
+        }
+    });
+
+    $('#inputAddress').keyup(function (e) {
+        if (regexCusAddress.test($(this).val())) {
+            $(this).css("background-color","green", "!important");
+        }else{
+            $(this).css("background-color","red", "!important");
+        }
+    });
+
+    $('#inputContact').keydown(function (e) {
+        if (e.keyCode == 13 && regexCusContact.test($(this).val())) {
+            saveCustomer();
+            $(this).css("background-color","black", "!important");
+        }
+    });
+
+    $('#inputContact').keyup(function (e) {
+        if (regexCusContact.test($(this).val())) {
+            $(this).css("background-color","green", "!important");
+        }else{
+            $(this).css("background-color","red", "!important");
+        }
+    });
 
 
 
