@@ -82,4 +82,3 @@ $("#btnPlaceOrder").click(function () {
     setView($("#placeOrder"));
 });
 
-//end of logics for SPA
