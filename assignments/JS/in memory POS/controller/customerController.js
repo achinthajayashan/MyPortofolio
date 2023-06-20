@@ -1,3 +1,5 @@
+getAllCustomers();
+
 $('#btnSaveCustomer').click(function () {
     if (checkAll()){
          saveCustomer();
