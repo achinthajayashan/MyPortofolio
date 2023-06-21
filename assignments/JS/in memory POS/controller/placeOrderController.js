@@ -2,6 +2,20 @@ let OrderPreID="O00-00";
 let orderNo=1;
 
 $('#btnPurchase').click(function () {
+
+    let IdOfOrder = $('#InputOID').val();
+    let dateOfOrder=$('#InputDate').val();
+    let cusIDOfOrder=$('#selectCusId').val();
+    let cartDetails=cartItemsdb;
+
+    let newOrder=Object.assign({},orderob);
+    newOrder.id=IdOfOrder;
+    newOrder.date=dateOfOrder;
+    newOrder.customerId=cusIDOfOrder;
+    newOrder.cartDetail=cartDetails;
+
+    orderdb.push(newOrder);
+
     orderNo++;
     setOrderId();
     console.log(orderNo)
