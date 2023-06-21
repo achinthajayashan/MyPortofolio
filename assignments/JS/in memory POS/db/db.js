@@ -8,5 +8,5 @@ var itemdb=[
     {code:"I00-002",description:"Sunlight",unitPrice: 345.00,qtyOnHand: 150},
     {code:"I00-003",description:"Light Boy",unitPrice: 245.00,qtyOnHand: 400}
 ];
-var cartItems=[];
+var cartItemsdb=[];
 var orderdb=[];

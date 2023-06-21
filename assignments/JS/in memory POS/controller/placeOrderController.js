@@ -19,38 +19,43 @@ $('#selectItemId').change(function(){ //the event here is change
         }
     }
 });
-
-var cartItemsDB=[];
+subTotal=0;
 
 $('#btnAddToCart').click(function () {
+    subTotal=0;
     let oItemID = $("#selectItemId").val();
     let oDesc = $("#selectedItemName").val();
     let oUnitPrice = $("#UnitPriceP").val();
     let oQty = $("#QtyP").val();
     let oTotal = oUnitPrice*oQty;
 
-    let cartOb = {
-        IID: oItemID,
-        IName: oDesc,
-        IUnitPrice: oUnitPrice,
-        IQty: oQty,
-        ITotal:oTotal
-    }
+    let newCart = Object.assign({}, cartOb);
+    newCart.IID = oItemID;
+    newCart.IName = oDesc;
+    newCart.IUnitPrice = oUnitPrice;
+    newCart.IQty = oQty;
+    newCart.ITotal = oTotal;
 
     //add customer record to the customer array
-    cartItemsDB.push(cartOb);
-
+    cartItemsdb.push(newCart);
 
     //create row and add text field values
     let row=`<tr>
-                    <td>${cartOb.IID}</td>
-                    <td>${cartOb.IName}</td>
-                    <td>${cartOb.IUnitPrice}</td>
-                    <td>${cartOb.IQty}</td>
-                    <td>${cartOb.ITotal}</td>
+                    <td>${newCart.IID}</td>
+                    <td>${newCart.IName}</td>
+                    <td>${newCart.IUnitPrice}</td>
+                    <td>${newCart.IQty}</td>
+                    <td>${newCart.ITotal}</td>
                    </tr>`;
     //and then append the row to tableBody
     $("#tblCartBody").append(row);
+
+    for (let i = 0; i <= cartItemsdb.length; i++) {
+        subTotal+=cartItemsdb[i].ITotal;
+        $('#inputTotal').val(parseInt(subTotal));
+        console.log(parseInt(subTotal));
+    }
+
 });
 function loadCusIds() {
     var optionCus = '';
