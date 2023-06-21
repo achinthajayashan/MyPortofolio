@@ -1,3 +1,14 @@
+let OrderPreID="O00-00";
+let orderNo=1;
+
+$('#btnPurchase').click(function () {
+    orderNo++;
+    setOrderId();
+    console.log(orderNo)
+
+});
+
+
 $('#selectCusId').change(function(){ //the event here is change
 
     for (let i=0; i<customerdb.length; i++){
@@ -7,6 +18,8 @@ $('#selectCusId').change(function(){ //the event here is change
         }
     }
 });
+
+
 
 $('#selectItemId').change(function(){ //the event here is change
 
@@ -79,6 +92,8 @@ $('#inputCash').keydown(function (event){
     }
 
 });
+
+
 function loadCusIds() {
     var optionCus = '';
     for (var i = 0; i < customerdb.length; i++) {
@@ -94,6 +109,14 @@ function loadItemIds() {
     }
     $('#selectItemId').append(optionItem);
 }
+
+function setOrderId() {
+    $('#InputOID').val(OrderPreID+orderNo);
+    console.log(Number(orderNo))
+}
+
+
+
 
 
 

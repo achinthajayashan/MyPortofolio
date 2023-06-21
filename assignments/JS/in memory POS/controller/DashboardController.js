@@ -82,5 +82,7 @@ $("#btnPlaceOrder").click(function () {
     setView($("#placeOrder"));
     loadCusIds();
     loadItemIds();
+    setOrderId();
+
 });
 
