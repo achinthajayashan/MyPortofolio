@@ -16,9 +16,13 @@ $('#btnPurchase').click(function () {
 
     orderdb.push(newOrder);
 
+
+
     orderNo++;
     setOrderId();
-    console.log(orderNo)
+    console.log(orderNo);
+
+    cartItemsdb=[""];
 
 });
 
@@ -126,9 +130,13 @@ function loadItemIds() {
 
 function setOrderId() {
     $('#InputOID').val(OrderPreID+orderNo);
-    console.log(Number(orderNo))
+    console.log(Number(orderNo));
 }
 
+
+function f() {
+
+}
 
 
 
