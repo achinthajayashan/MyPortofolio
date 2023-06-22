@@ -22,7 +22,8 @@ $('#btnPurchase').click(function () {
     setOrderId();
     console.log(orderNo);
 
-    cartItemsdb=[""];
+    cartItemsdb=[];
+    clearFields();
 
 });
 
@@ -50,7 +51,7 @@ $('#selectItemId').change(function(){ //the event here is change
         }
     }
 });
-subTotal=0;
+
 
 $('#btnAddToCart').click(function () {
     subTotal=0;
@@ -69,6 +70,12 @@ $('#btnAddToCart').click(function () {
 
     //add customer record to the customer array
     cartItemsdb.push(newCart);
+    for (let i = 0; i < itemdb.length; i++) {
+        if(itemdb[i].code==oItemID){
+            itemdb[i].qtyOnHand=itemdb[i].qtyOnHand-oQty;
+        }
+    }
+
 
     //create row and add text field values
     let row=`<tr>
@@ -134,7 +141,18 @@ function setOrderId() {
 }
 
 
-function f() {
+function clearFields() {
+    $("#SelectedCusName").val("");
+    $("#selectedItemName").val("");
+    $("#UnitPriceP").val("");
+    $("#QtyOnHndP").val("");
+    $("#QtyP").val("");
+    $("#tblCartBody").empty();
+    $("#inputSubTotal").val("");
+    $("#inputTotal").val("");
+    $("#inputDiscount").val("");
+    $("#inputCash").val("");
+    $("#inputBalance").val("");
 
 }
 
