@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Rubik+Iso&display=swap" rel="stylesheet">
 
+
 </head>
 <body>
 
@@ -28,7 +29,7 @@
 </section>
 
 <header>
-    <h2>My Portofolio</h2>
+    <h2>Achintha Jayashan</h2>
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -55,7 +56,7 @@
         <article class="nameDetails">
             <h1 class="hello">Hello...</h1>
             <h1>Welcome To My Portofolio</h1>
-            <h1 class="myName"><b>I'm Achintha Jayashan</b></h1>
+            <h1 id="nameText" class="myName"><b></b></h1>
             <h4 class="mySubTitle">Fullstack Developer</h4>
 
             <ul>
@@ -309,5 +310,31 @@
 <a href="http://achinthajayashan.epizy.com/" target="_blank">infinity</a>
 <a href="https://achinthajayashan.000webhostapp.com/" target="_blank">000 Web host</a> -->
 <script src="assets/styles/loadingScreen.js"></script>
+<script src="assets/jquery-3.7.0.min.js"></script>
+<script>
+   let names = ["I'm Achintha Jayashan" ,"I love Programming"];
+   let text1 = $("#nameText").text();
+   let count=0;
+   let text2 =$("#nameText");
+   let i = 0;
+
+   setInterval(function (){
+       text2.text(names[i].substring(0,count));
+       count++;
+
+
+       if (count>names[i].length){
+           text2.text(names[i].substring(count,0));
+           count=0;
+           i++;
+       }
+
+       if (i==names.length){
+           //count=0;
+           i=0;
+       }
+   },200);
+
+</script>
 </body>
 </html>
