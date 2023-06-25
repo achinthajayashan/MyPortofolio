@@ -202,81 +202,10 @@
                 <th scope="col">Order ID</th>
                 <th scope="col">Date</th>
                 <th scope="col">Customer ID</th>
-                <th scope="col">Item ID</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Discount</th>
-                <th scope="col">Total</th>
-                <th scope="col">Action</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">O-001</th>
-                <td>2023-05-17</td>
-                <td>C-001</td>
-                <td>I-001</td>
-                <td>2</td>
-                <td>1000</td>
-                <td>30000</td>
-                <td>
-                    <button type="button" class="btn btn-outline-warning">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">O-002</th>
-                <td>2023-05-17</td>
-                <td>C-001</td>
-                <td>I-001</td>
-                <td>2</td>
-                <td>1000</td>
-                <td>30000</td>
-                <td>
-                    <button type="button" class="btn btn-outline-warning">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">O-003</th>
-                <td>2023-05-17</td>
-                <td>C-001</td>
-                <td>I-001</td>
-                <td>2</td>
-                <td>1000</td>
-                <td>30000</td>
-                <td>
-                    <button type="button" class="btn btn-outline-warning">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </td>
-            </tr>
+            <tbody id="tblBodyOrders">
 
-            <tr>
-                <th scope="row">O-004</th>
-                <td>2023-05-17</td>
-                <td>C-001</td>
-                <td>I-001</td>
-                <td>2</td>
-                <td>1000</td>
-                <td>30000</td>
-                <td>
-                    <button type="button" class="btn btn-outline-warning">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </td>
-            </tr>
-
-            <tr>
-                <th scope="row">0-005</th>
-                <td>2023-05-17</td>
-                <td>C-001</td>
-                <td>I-001</td>
-                <td>2</td>
-                <td>1000</td>
-                <td>30000</td>
-                <td>
-                    <button type="button" class="btn btn-outline-warning">Edit</button>
-                    <button type="button" class="btn btn-outline-danger">Delete</button>
-                </td>
-            </tr>
 
             </tbody>
         </table>
@@ -302,13 +231,13 @@
                         <div class="mb-1 col">
                             <label for="InputOID" class="form-label text-white">Order ID</label>
                             <input type="text"
-                                   class="form-control bg-black border-white text-warning focus-ring-warning"
+                                   class="form-control bg-black  text-warning "
                                    id="InputOID">
                         </div>
                         <div class="mb-1 col mb-4">
                             <label for="InputDate" class="form-label text-white">Date</label>
                             <input type="date"
-                                   class="form-control bg-black border-white text-warning focus-ring-warning focus-ring"
+                                   class="form-control bg-black  text-warning "
                                    id="InputDate">
                         </div>
                     </div>
@@ -318,14 +247,14 @@
                     <div class="row border-bottom border-white">
                         <div class="mb-1 col">
                             <label for="selectCusId" class="form-label text-white">Customer ID</label>
-                            <select class="form-select bg-black text-warning focus-ring-warning focus-ring"
+                            <select class="form-select bg-black text-warning"
                                     aria-label="Default select example" id="selectCusId">
                             </select>
                         </div>
                         <div class="mb-1 col mb-4">
                             <label for="SelectedCusName" class="form-label text-white">Customer Name</label>
                             <input type="text"
-                                   class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                                   class="form-control bg-black  text-warning  "
                                    id="SelectedCusName" readonly>
                         </div>
                     </div>
@@ -335,14 +264,14 @@
                     <div class="row">
                         <div class="mb-1 col">
                             <label for="selectItemId" class="form-label text-white">Item ID</label>
-                            <select class="form-select bg-black text-warning focus-ring-warning focus-ring"
+                            <select class="form-select bg-black text-warning "
                                     aria-label="Default select example" id="selectItemId">
                             </select>
                         </div>
                         <div class="mb-1 col mb-4">
                             <label for="selectedItemName" class="form-label text-white">Description</label>
                             <input type="text"
-                                   class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                                   class="form-control bg-black  text-warning  "
                                    id="selectedItemName" readonly>
                         </div>
                     </div>
@@ -351,20 +280,20 @@
                         <div class="mb-1 col">
                             <label for="UnitPriceP" class="form-label text-white">Unit Price</label>
                             <input type="number"
-                                   class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                                   class="form-control bg-black  text-warning "
                                    id="UnitPriceP" readonly>
                         </div>
                         <div class="mb-1 col">
                             <label for="QtyOnHndP" class="form-label text-white">Qty On Hnd</label>
                             <input type="number"
-                                   class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                                   class="form-control bg-black  text-warning "
                                    id="QtyOnHndP" readonly>
                         </div>
 
                         <div class="mb-1 col">
                             <label for="QtyP" class="form-label text-white">Qty</label>
                             <input type="number"
-                                   class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                                   class="form-control bg-black text-warning "
                                    id="QtyP">
                         </div>
                     </div>
@@ -399,21 +328,21 @@
                     <div class="mb-1 col">
                         <label for="inputTotal" class="form-label text-white">Total</label>
                         <input type="number"
-                               class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                               class="form-control bg-black  text-warning "
                                id="inputTotal" readonly>
                     </div>
 
                     <div class="mb-1 col">
                         <label for="inputDiscount" class="form-label text-white">Discount</label>
                         <input type="number"
-                               class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                               class="form-control bg-black  text-warning "
                                id="inputDiscount">
                     </div>
                     <div class="row">
                     <div class="mb-5 col text-warning">
                         <label for="inputSubTotal" class="form-label ">Sub Total</label>
                         <input type="number"
-                               class="form-control bg-black border-warning text-warning focus-ring-warning focus-ring mb-4 rounded"
+                               class="form-control bg-black text-warning  mb-4 rounded"
                                id="inputSubTotal" readonly>
                     </div>
                 </div>
@@ -423,7 +352,7 @@
                     <div class="mb-1 col">
                         <label for="inputCash" class="form-label text-white">Cash</label>
                         <input type="number"
-                               class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                               class="form-control bg-black  text-warning "
                                id="inputCash">
                     </div>
 
@@ -431,7 +360,7 @@
                     <div class="mb-1 col">
                         <label for="inputBalance" class="form-label text-white">Balance</label>
                         <input type="number"
-                               class="form-control bg-black border-white text-warning focus-ring-warning focus-ring "
+                               class="form-control bg-black  text-warning "
                                id="inputBalance" readonly>
                     </div>
 
@@ -451,6 +380,7 @@
 
 <script src="db/db.js"></script>
 <script src="controller/placeOrderController.js"></script>
+<script src="controller/validation/PlaceOrderValidation.js"></script>
 <script src="model/customer.js"></script>
 <script src="model/item.js"></script>
 <script src="model/placeOrder.js"></script>
@@ -458,6 +388,8 @@
 <script src="controller/DashboardController.js"></script>
 <script src="controller/customerController.js"></script>
 <script src="controller/validation/CustomerValidation.js"></script>
+<script src="controller/orderController.js"></script>
+
 <script src="controller/itemcontroller.js"></script>
 <script src="controller/validation/ItemValidation.js"></script>
 <script src="controller/placeOrderController.js"></script>

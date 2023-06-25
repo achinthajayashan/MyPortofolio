@@ -76,6 +76,7 @@ $("#btnItem").click(function () {
 
 $("#btnOrders").click(function () {
     setView($("#orders"));
+    getAllOrders();
 });
 
 $("#btnPlaceOrder").click(function () {
