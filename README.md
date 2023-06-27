@@ -3,6 +3,8 @@ This is for demonstrating my skills
 
 -> link : https://achinthajayashan.github.io/MyPortofolio
 
+Used : html , css , javascript 
+
 This Portofolio Shows All My Skills And Details..... You Can Get An Simple Idea By Watching This....
 
 
